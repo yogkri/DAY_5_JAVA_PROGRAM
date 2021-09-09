@@ -3,41 +3,38 @@ import java.util.Scanner;
 import java.util.Scanner;
 
 
-class Main{
+class Main
+{
+    public static void main(String arg[])
 
-    static void findTriplets(int[] arr, int n)
     {
-        boolean found = false;
-        for (int i=0; i<n-2; i++)
-        {
-            for (int j=i+1; j<n-1; j++)
-            {
-                for (int k=j+1; k<n; k++)
-                {
-                    if (arr[i]+arr[j]+arr[k] == 0)
-                    {
-                        System.out.print(arr[i]);
-                        System.out.print(" ");
-                        System.out.print(arr[j]);
-                        System.out.print(" ");
-                        System.out.print(arr[k]);
-                        System.out.print("\n");
-                        found = true;
-                    }
-                }
-            }
-        }
-        if (found == false)
-            System.out.println(" not exist ");
+
+        int x1,x2,y1,y2;
+
+        double dis;
+
+        Scanner sc=new Scanner(System.in);
+
+        System.out.println("enter x1 point");
+
+        x1=sc.nextInt();
+
+        System.out.println("enter y1 point");
+
+        y1=sc.nextInt();
+
+        System.out.println("enter x2point");
+
+        x2=sc.nextInt();
+
+        System.out.println("enter y2 point");
+
+        y2=sc.nextInt();
+
+        dis=Math.sqrt((x2-x1)*(x2-x1) + (y2-y1)*(y2-y1));
+
+        System.out.println("distancebetween"+"("+x1+","+y1+"),"+"("+x2+","+y2+")===>"+dis);
 
     }
 
-
-    public static void main(String[] args)
-    {
-        int arr[] = {0, -1, 2, -3, 1};
-        int n =arr.length;
-        findTriplets(arr, n);
-
-    }
 }
