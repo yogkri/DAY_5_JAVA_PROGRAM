@@ -1,29 +1,35 @@
 package com.company;
 
-import java.util.Random;
+
+import java.util.Scanner;
 public class Main {
 
     static final int HEADFLIP = 1;
     static final int COUNT = 100;
 
-    public static void main(String[] args)  {
+    public static void main(String[] args) {
 
-        double heads = 0;
-        double tails = 0;
-        for (int i = 1; i <= COUNT; i++) {
-            //for getting Randoms number draw between 0 or 1
-            Random random = new Random();
-            int coin = random.nextInt(2);
-            if (coin == HEADFLIP) {
-                System.out.println("Head");
-                heads += 1;
-            } else {
-                System.out.println("Tail");
-                tails += 1;
+
+                String leapYearCheck;
+                System.out.print("Enter Year to Check it LeapYear or not : ");
+                Scanner scanner = new Scanner(System.in);
+                leapYearCheck = scanner.nextLine();
+
+                if (leapYearCheck.length() == 4) {
+
+                    int leapYear = Integer.parseInt(leapYearCheck);
+                    System.out.println("Entred year is : " + leapYear);
+                    if ((leapYear % 4) == 0 && (leapYear % 100) != 0 || (leapYear % 400) == 0) {
+                        System.out.println(leapYear + " is a LeapYear");
+                    } else {
+                        System.out.println(leapYear + " is not a LeapYear");
+                    }
+
+                } else {
+                    System.out.println("Invalid Year! Enter an valid Year of 4 digit ");
+                }
             }
         }
-        System.out.println("percentage of Heads : " + ((heads / COUNT) * 100) + "%");
-        System.out.println("percentage of Tails : " + ((tails / COUNT) * 100) + "%");
-    }
 
-}
+
+
